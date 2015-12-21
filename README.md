@@ -1,31 +1,21 @@
-# EPID600_Final-Project
-Data Science for Biomedical Informatics Final Project
+# Seizure Detection in Canine Subjects
+### Tyler Blevins
 
-## Seizure Detection in Canine Subjects
-EEG from four canine subjects will be analyzed. EEG data will be clipped into 1 second segments and classified as 'Ictal' or Interictal'. Features derived from the literature will be extracted from the clips, analyzed for importance, and ran through a seizure detection algorithm. The performance of the algorithm will be evaluated by ROC and AUC metrics
+## Project Description
+EEG from four canine subjects was analyzed. The EEG data is publicly available (and nicely packaged/organized) on Kaggle.com as part of the Seizure Detection challenge. The data was clipped into 1 second segments and classified as 'Ictal' (seizure) or 'Interictal' (between seizure). Features were extracted from the clips, analyzed for importance, and ran through a seizure detection algorithm. The performance of the algorithm was evaluated by ROC and AUC metrics.
 
-## Sample code
-Sample code and data is provided to evaluate one subject in the study. Please use the sample R script file along with the data stored in data/Dog1. This project must be your working directory path for the script to execute correctly.
+## Directory Information
+`data` contains the training and testing data for only Dog 1 in the study. This is for use with the sample code. The data for Dogs 2-4 can be found on [Kaggle](https://www.kaggle.com/c/seizure-detection/data). Download the clips.tar file and unzip. Please be aware that the clips.tar file is ~50GB uncompressed.
 
-## Method
-1. EEG data is pulled from ieeg.org and clipped into 1-second segments using the ieeg.org toolbox in Matlab.  
-2. .mat files are loaded into R and processed.
-3. The following features are extracted:
-  - electrode channel correlations
-  - correlation eigenvalues
-  - energy
-  - log10 magnitudes of frequencies in the range of 1-47Hz
-  - frequency correlations
-  - frequency correlation eigenvalues
-4. Subject feature matrices are processed by seizure detector (classification algorithm)
-  - Random Forest Classifier
-5. Algorithms are evaluated using ROC and AUC metrics.
+`pics` contains pictures of the figures used in the final report.
 
-## Feature Visualizations
-1. Time Domain
-![energy and correlations](https://raw.github.com/tyblevins/EPID600_Final-Project/master/pics/time_feats.png)
-2. Frequency Domain
-![eigenvalues and frequency correlations](https://raw.github.com/tyblevins/EPID600_Final-Project/master/pics/freq_feats.png)
+`report` contains the .html and .RMD files for the final report.
 
-## Results - Model Performance
-![ROC curves](https://raw.github.com/tyblevins/EPID600_Final-Project/master/pics/results.png)
+`Final_Project.R` is the raw code for processing and analyzing the data.
+
+`project-info.txt` details the instructions for the final project in EPID 600.
+
+`Sample.R` is the raw code for running this analysis on the sample data in `data`. This project must be your working directory path for the script to execute correctly, but otherwise should be ready to go out-of-the-box.
+
+
+
